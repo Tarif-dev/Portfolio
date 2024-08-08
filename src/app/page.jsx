@@ -1,23 +1,19 @@
 "use client"
-import { useState, useEffect, useRef } from 'react'
+import { useState, useEffect } from 'react'
 import { motion, useScroll, useTransform, AnimatePresence } from 'framer-motion'
-import { Canvas, useFrame } from '@react-three/fiber'
-import { Sphere, MeshDistortMaterial } from '@react-three/drei'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger'
+import Image from 'next/image'
 gsap.registerPlugin(ScrollTrigger)
 
 const projects = [
-  { id: 1, title: 'CarbonDex', category: 'Blockchain', image: '/carbondex.png', description: 'A Carbon Credits trading platform on Ethereum .', tech: ['React', 'Solidity', 'Web3.js'] },
-  { id: 2, title: 'E-commerce Platform', category: 'Web', image: '/placeholder2.jpg', description: 'Full-stack online store with React and Node.js.', tech: ['React', 'Node.js', 'MongoDB'] },
-  { id: 3, title: 'iOS Fitness App', category: 'Mobile', image: '/placeholder3.jpg', description: 'SwiftUI app for tracking workouts and nutrition.', tech: ['Swift', 'SwiftUI', 'HealthKit'] },
-  { id: 4, title: 'NFT Marketplace', category: 'Blockchain', image: '/placeholder4.jpg', description: 'Platform for buying and selling unique digital assets.', tech: ['React', 'Solidity', 'IPFS'] },
-  { id: 5, title: 'Social Media Dashboard', category: 'Web', image: '/placeholder5.jpg', description: 'Analytics tool for managing multiple social accounts.', tech: ['Vue.js', 'D3.js', 'Node.js'] },
-  { id: 6, title: 'Crypto Wallet', category: 'Mobile', image: '/placeholder6.jpg', description: 'Secure mobile wallet for managing cryptocurrencies.', tech: ['React Native', 'Blockchain API', 'Biometrics'] },
+  { id: 1, title: 'CarbonDex', category: 'Blockchain', image: '/carbondex.png', description: 'A Carbon Credits trading platform on Ethereum.', tech: ['React', 'Solidity', 'Web3.js'] },
+  { id: 2, title: 'E-commerce Platform', category: 'Web', image: '/carbondex.png', description: 'Full-stack online store with React and Node.js.', tech: ['React', 'Node.js', 'MongoDB'] },
+  { id: 3, title: 'iOS Fitness App', category: 'Mobile', image: '/carbondex.png', description: 'SwiftUI app for tracking workouts and nutrition.', tech: ['Swift', 'SwiftUI', 'HealthKit'] },
+  { id: 4, title: 'NFT Marketplace', category: 'Blockchain', image: '/carbondex.png', description: 'Platform for buying and selling unique digital assets.', tech: ['React', 'Solidity', 'IPFS'] },
+  { id: 5, title: 'Social Media Dashboard', category: 'Web', image: '/carbondex.png', description: 'Analytics tool for managing multiple social accounts.', tech: ['Vue.js', 'D3.js', 'Node.js'] },
+  { id: 6, title: 'Crypto Wallet', category: 'Mobile', image: '/carbondex.png', description: 'Secure mobile wallet for managing cryptocurrencies.', tech: ['React Native', 'Blockchain API', 'Biometrics'] },
 ]
-
-
-
 
 export default function EnhancedLandingPage() {
   const [mounted, setMounted] = useState(false)
@@ -103,50 +99,49 @@ export default function EnhancedLandingPage() {
       </AnimatePresence>
 
       <main className="container mx-auto px-6 pt-24">
-      <section className="relative h-screen flex items-center justify-center overflow-hidden">
-  <div className="relative z-10 text-center">
-    <motion.h1
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 1 }}
-      className="text-6xl md:text-8xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-purple-400 via-pink-500 to-red-500"
-    >
-      Tarif Hussain
-    </motion.h1>
-    <motion.p
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 1, delay: 0.2 }}
-      className="text-2xl md:text-3xl mb-12"
-    >
-      Crafting Digital Experiences at the Frontier of Design & Technology
-    </motion.p>
-    <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 1, delay: 0.4 }}
-      className="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-6"
-    >
-      <motion.a 
-        whileHover={{ scale: 1.05 }}
-        whileTap={{ scale: 0.95 }}
-        href="#projects" 
-        className="bg-gradient-to-r from-purple-600 to-indigo-600 text-white px-8 py-4 rounded-full font-bold hover:from-purple-500 hover:to-indigo-500 transition-all duration-300 shadow-lg"
-      >
-        Discover My Portfolio
-      </motion.a>
-      <motion.a 
-        whileHover={{ scale: 1.05 }}
-        whileTap={{ scale: 0.95 }}
-        href="#contact" 
-        className="bg-gradient-to-r from-pink-600 to-red-600 text-white px-8 py-4 rounded-full font-bold hover:from-pink-500 hover:to-red-500 transition-all duration-300 shadow-lg"
-      >
-        Initiate Collaboration
-      </motion.a>
-    </motion.div>
-  </div>
-</section>
-
+        <section className="relative h-screen flex items-center justify-center overflow-hidden">
+          <div className="relative z-10 text-center">
+            <motion.h1
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1 }}
+              className="text-6xl md:text-8xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-purple-400 via-pink-500 to-red-500"
+            >
+              Tarif Hussain
+            </motion.h1>
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1, delay: 0.2 }}
+              className="text-2xl md:text-3xl mb-12"
+            >
+              Crafting Digital Experiences at the Frontier of Design & Technology
+            </motion.p>
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1, delay: 0.4 }}
+              className="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-6"
+            >
+              <motion.a 
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                href="#projects" 
+                className="bg-gradient-to-r from-purple-600 to-indigo-600 text-white px-8 py-4 rounded-full font-bold hover:from-purple-500 hover:to-indigo-500 transition-all duration-300 shadow-lg"
+              >
+                Discover My Portfolio
+              </motion.a>
+              <motion.a 
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                href="#contact" 
+                className="bg-gradient-to-r from-pink-600 to-red-600 text-white px-8 py-4 rounded-full font-bold hover:from-pink-500 hover:to-red-500 transition-all duration-300 shadow-lg"
+              >
+                Initiate Collaboration
+              </motion.a>
+            </motion.div>
+          </div>
+        </section>
 
         <section id="about" className="py-24">
           <motion.h2
@@ -164,7 +159,7 @@ export default function EnhancedLandingPage() {
             className="max-w-3xl mx-auto text-center"
           >
             <p className="text-xl mb-6">
-              I'm a passionate developer with a keen eye for design and a love for cutting-edge technologies. With expertise in web, mobile, and blockchain development, I strive to create innovative solutions that push the boundaries of what's possible in the digital realm.
+              I&apos;m a passionate developer with a keen eye for design and a love for cutting-edge technologies. With expertise in web, mobile, and blockchain development, I strive to create innovative solutions that push the boundaries of what&apos;s possible in the digital realm.
             </p>
             <p className="text-xl">
               My goal is to blend creativity with technical prowess to deliver exceptional user experiences and drive meaningful impact through technology.
@@ -209,7 +204,7 @@ export default function EnhancedLandingPage() {
                 transition={{ duration: 0.5 }}
                 className="bg-gradient-to-br from-gray-800 to-gray-900 rounded-xl overflow-hidden shadow-2xl hover:shadow-purple-500/20 transition-all duration-300"
               >
-                <img src={project.image} alt={project.title} className="w-full h-56 object-cover" />
+                <Image src={project.image} alt={project.title} width={500} height={500} className="w-full h-56 object-cover" />
                 <div className="p-6">
                   <h3 className="text-xl font-bold mb-2">{project.title}</h3>
                   <p className="text-gray-400 mb-4">{project.description}</p>
